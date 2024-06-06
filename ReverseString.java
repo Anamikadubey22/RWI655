@@ -1,16 +1,16 @@
-package com;
+package june6;
 
 public class ReverseString {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		String name = "Anamika";
-		int leng = name.length();
-		String rev = " ";
-		for(int i=leng-1;i>=0;i--) {
-			rev = rev+name.charAt(i);
-		}
-		System.out.println("Reverse of "+name+" is "+rev);
+	public String reverseString(String str) {
+	    StringBuilder sb = new StringBuilder(str);
+	    return sb.reverse().toString();
 	}
 
+	 public static void main(String[] args) {
+	        String str = "Railworld traniee";
+	        ReverseString reverseString = new ReverseString();
+	        String reversedStr = reverseString.reverseString(str);
+	        System.out.println(reversedStr); // Output: !dlroW ,olleH
+	    }
 }
