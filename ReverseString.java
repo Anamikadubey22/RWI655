@@ -1,16 +1,28 @@
-package com;
+package june7;
 
 public class ReverseString {
+    public static void main(String[] args) {
+        String originalString = "Hii I love java . ";
+        System.out.println("Original String: " + originalString);
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		String name = "Anamika";
-		int leng = name.length();
-		String rev = " ";
-		for(int i=leng-1;i>=0;i--) {
-			rev = rev+name.charAt(i);
-		}
-		System.out.println("Reverse of "+name+" is "+rev);
-	}
+        String reversedString = reverseString(originalString);
+        System.out.println("Reversed String: " + reversedString);
+    }
 
+    public static String reverseString(String str) {
+        char[] charArray = str.toCharArray();
+        int left = 0;
+        int right = charArray.length - 1;
+
+        while (left < right) {
+            char temp = charArray[left];
+            charArray[left] = charArray[right];
+            charArray[right] = temp;
+
+            left++;
+            right--;
+        }
+
+        return new String(charArray);
+    }
 }
